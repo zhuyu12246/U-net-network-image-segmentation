@@ -1,3 +1,5 @@
+import os
+
 import torch
 from torch.utils.data import DataLoader
 from dataset import UNetDataset
@@ -58,6 +60,7 @@ for epoch in range(epochs):
 
     # 打印当前epoch的损失值
     print(f"Epoch {epoch+1}, Loss = {(all_loss / 20):.4f}")
-
+# 创建保存结果的目录，如果目录已存在则不会报错
+os.makedirs("model_save", exist_ok=True)
 # 保存训练好的模型参数到文件
 torch.save(model.state_dict(), "model_save/unet.pth")
