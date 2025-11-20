@@ -1,1 +1,1 @@
-This is a repository split using u-net.
+This is a repository for segmenting medical images using u-net.
