@@ -99,10 +99,10 @@ class UNet(nn.Module):
         self.u4 = UpSample(128)
         # 又经过一个双卷积,通道数由128个通道变成64个通道
         self.c9 = Conv_Block(128, 64)
-        # 开始输出,要输出的是一个彩色图片，输入64通道，输出3通道，卷积核3*3,步长和padding都为1
-        self.out = nn.Conv2d(64, 3, 3, 1, 1)
+
+        self.out = nn.Conv2d(64, 1, 3, 1, 1)
         # 激活函数，这里也可以用softmax
-        self.Th = nn.Sigmoid()
+        # self.Th = nn.Sigmoid()
 
     def forward(self, x):
         R1 = self.c1(x)
@@ -117,8 +117,8 @@ class UNet(nn.Module):
         O3 = self.c8(self.u3(O2, R2))
         O4 = self.c9(self.u4(O3, R1))
 
-        # 对输出结果再加上一个sigmoid层
-        return self.Th(self.out(O4))
+
+        return self.out(O4)
 
 
 if __name__ == "__main__":
