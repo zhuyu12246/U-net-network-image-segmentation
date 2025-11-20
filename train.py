@@ -26,10 +26,11 @@ criterion = nn.BCEWithLogitsLoss()
 # 定义优化器为Adam，学习率设置为1e-4
 optimizer = optim.Adam(model.parameters(), lr=1e-4)
 
-# 主要进行测试 1轮快一点
-# 训练循环：共进行1个epoch
+# 主要进行测试 20轮快一点
+# 训练循环：共进行20个epoch
+epochs = 20
 print("start---------------------------------------")
-for epoch in range(1):
+for epoch in range(epochs):
     # 将模型设置为训练模式
     model.train()
     all_loss  = 0
