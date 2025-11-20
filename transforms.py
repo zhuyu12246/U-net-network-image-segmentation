@@ -16,7 +16,7 @@ train_transform = A.Compose([
     A.RandomBrightnessContrast(p=0.3),
     A.Normalize(),
     ToTensorV2(),
-],additional_targets={'mask':'mask'})
+])
 
 # 测试数据预处理变换管道
 # 仅包含必要的预处理操作：
