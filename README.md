@@ -1,1 +1,0 @@
-This is a repository for segmenting medical images using u-net.
