@@ -1,1 +1,1 @@
-这是一个使用u-net分割医学图像的仓库
+This is a repository for segmenting medical images using u-net.
