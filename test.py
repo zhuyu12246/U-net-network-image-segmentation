@@ -21,7 +21,7 @@ test_dataset = UNetDataset(
 # test_dataset: 测试数据集对象
 # batch_size: 批次大小，设置为1表示每次处理一张图像
 # shuffle: 是否打乱数据顺序，测试时设为False保持数据顺序一致
-test_loader = DataLoader(test_dataset, batch_size=4, shuffle=False)
+test_loader = DataLoader(test_dataset, batch_size=1, shuffle=False)
 
 # 初始化UNet模型并加载预训练权重
 # UNet(): 创建UNet模型实例
