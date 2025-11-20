@@ -57,7 +57,7 @@ for epoch in range(epochs):
         print(f"batch loss:{loss.item()}")
 
     # 打印当前epoch的损失值
-    print(f"Epoch {epoch+1}, Loss = {all_loss / len(train_loader) // batch_size:.4f}")
+    print(f"Epoch {epoch+1}, Loss = {(all_loss / 20):.4f}")
 
 # 保存训练好的模型参数到文件
 torch.save(model.state_dict(), "model_save/unet.pth")
